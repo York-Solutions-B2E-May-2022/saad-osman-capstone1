@@ -10,10 +10,10 @@ import {
     SUBMIT_STATE
 } from "../Store/actions";
 
-export function Follower(){
-    const dispatch = useDispatch()
+export function Follower({_useDispatch = useDispatch, _useSelector = useSelector}){
+    const dispatch = _useDispatch()
     const [startProcessBtn, setStartProcessBtn] = useState(false)
-    let {startProcess, select, allProcessFollower, submit, token} = useSelector(state=> ({
+    let {startProcess, select, allProcessFollower, submit, token} = _useSelector(state=> ({
         startProcess: state.followerReducer.startProcess,
         select: state.followerReducer.select,
         allProcessFollower: state.followerReducer.allProcessFollower,

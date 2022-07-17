@@ -2,9 +2,9 @@ import {ALL_PROCESS_FOLLOWER, GO_TO_EDITOR, GO_TO_FOLLOWER} from "../Store/actio
 import {useDispatch, useSelector} from "react-redux";
 import {getAll} from "../Editor/redux/asyncRedux";
 
-export function Home(){
-    const dispatch = useDispatch()
-    const allProcess = useSelector(state=> state.EditorReducer.allProcess)
+export function Home({_useDispatch = useDispatch, _useSelector = useSelector}){
+    const dispatch = _useDispatch()
+    const allProcess = _useSelector(state=> state.EditorReducer.allProcess)
 
     return(
         <div>
