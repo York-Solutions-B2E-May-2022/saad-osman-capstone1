@@ -17,14 +17,14 @@ function App() {
     if(follower){
         return(
             <>
-                return <Follower />
+                 <Follower />
             </>
         )
     }
     if(createProcess){
         return(
             <>
-                return <CreateProcess />
+                 <CreateProcess />
             </>
         )
     }

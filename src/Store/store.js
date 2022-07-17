@@ -1,6 +1,7 @@
 import {applyMiddleware, combineReducers, compose,createStore} from "redux";
 import {Login} from "../Editor/redux/reducer";
 import {EditorReducer} from '../Editor/redux/reducer'
+import {followerReducer} from "../Follower/redux/reducer";
 //boilerplate for async redux; middleware magic
 const asyncMiddleware = storeAPI => next => action => {
     if (typeof action === 'function')
@@ -12,7 +13,7 @@ const asyncMiddleware = storeAPI => next => action => {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    Login, EditorReducer
+    Login, EditorReducer, followerReducer
 })
  export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(asyncMiddleware)))
 
