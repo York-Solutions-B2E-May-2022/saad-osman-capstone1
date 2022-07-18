@@ -1,4 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
+
 import {getAll, startProcessToken, submitProcess, tokenRemove} from "../Editor/redux/asyncRedux";
 import { v4 as uuidv4 } from 'uuid';
 import {useEffect, useRef, useState} from "react";
@@ -156,9 +157,9 @@ export function Follower({_useDispatch = useDispatch, _useSelector = useSelector
                 <h2>Completed Proces</h2>
                 {allProcessFollower?.filter((s)=>s.finished === true).map((s)=>{
                     return(
-                        <>
+                        <div key={uuidv4()}>
                             - {s.title} <br />
-                        </>
+                        </div>
                     )
                 })}
             </div>}
