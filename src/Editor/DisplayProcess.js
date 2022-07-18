@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {FILTERED_PROCESS, EDIT_STAGE, TITLE_STATE} from "../Store/actions";
+import { v4 as uuidv4 } from 'uuid';
 
 export function DisplayProcess(){
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ export function DisplayProcess(){
         <div>
             {processList ? processList.sort((a, b) => a.step - b.step).map((s)=>{
                 return(
-                    <>
+                    <div key={uuidv4()}>
                         Step: {s.step}<br/>
                         Action: {s.action} <br />
                         Response Type:{s.responseEmbedd.val} <br />
@@ -38,7 +39,7 @@ export function DisplayProcess(){
                         <button onClick={(e)=>deleteAction(e,s)}>Delete</button>
                         <br/>
                         <br/>
-                    </>
+                    </div>
                 )
             }): null}
     </div>)

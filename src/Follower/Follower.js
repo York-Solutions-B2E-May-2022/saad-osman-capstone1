@@ -21,7 +21,6 @@ export function Follower({_useDispatch = useDispatch, _useSelector = useSelector
         token: state.followerReducer.token
     }))
     const dropdown = useRef();
-    console.log(token)
     const [next, setNext] = useState(false)
     const [prev, setPrev] = useState(true)
     const [idx, setIdx] = useState(0);
